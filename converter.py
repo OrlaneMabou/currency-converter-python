@@ -50,13 +50,13 @@ def convertir(montant: float, de: str, vers: str) -> float:
 
 def afficher_menu():
     """Affiche les devises disponibles / Verfügbare Währungen anzeigen"""
-    print("\n📋 Verfügbare Währungen:")
+    print("\n Verfügbare Währungen:")
     for code, nom in NOMS.items():
         print(f"   {code}  →  {nom}")
 
 def main():
     print("╔════════════════════════════════════╗")
-    print("║      WÄHRUNGSRECHNER  💱            ║")
+    print("║       WÄHRUNGSRECHNER              ║")
     print("╚════════════════════════════════════╝")
     print("Tipp: Wechselkurse sind fest (Stand 2024)")
 
@@ -72,18 +72,18 @@ def main():
 
             resultat = convertir(montant, de, vers)
 
-            print(f"\n  ✅ {montant:.2f} {de} = {resultat:.4f} {vers}")
+            print(f"\n   {montant:.2f} {de} = {resultat:.4f} {vers}")
             print(f"     ({NOMS.get(de, de)} → {NOMS.get(vers, vers)})")
 
         except ValueError as e:
-            print(f"\n  ❌ Fehler: {e}")
+            print(f"\n   Fehler: {e}")
 
         print("\nNochmal rechnen? (j/n): ", end="")
         antwort = input().strip().lower()
         if antwort != "j":
             continuer = False
 
-    print("\n👋 Auf Wiedersehen!")
+    print("\n Auf Wiedersehen!")
 
 if __name__ == "__main__":
     main()
